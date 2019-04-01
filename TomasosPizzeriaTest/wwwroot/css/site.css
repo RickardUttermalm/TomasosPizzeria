@@ -1,0 +1,112 @@
+﻿
+#selectedIngredients {
+    border: 1px solid grey;
+    height: 92px;
+    width:160px;
+    margin-right: 30px;
+    overflow: hidden;
+    overflow-y: scroll;
+    text-align: left;
+}
+#ingredientBox{
+    
+}
+#IngredientUl {
+    list-style: none;
+    padding: 0;
+
+}
+.removeingbtn {
+    border: none;
+    border-radius: 20%;
+    margin-left: 2px;
+    color: red;
+    font-weight: 900;
+}
+
+.removeingbtn:hover{
+    cursor: pointer;
+}
+
+#bestpizza {
+    color: white;
+    padding: 20%;
+}
+.mainbackground{
+    background-image: url("../images/107074-free-pizza-wallpaper-2880x1800.jpg");
+
+}
+#footerlogo{
+    padding-top: 5%;
+}
+
+.loginpadding{
+    background-color: white;
+    padding: 20%;
+}
+
+form {
+    background-color: white;
+    border: 5px solid whitesmoke;
+ 
+}
+
+.menuitem {
+    background-color: whitesmoke;
+    margin-top: 5px;
+    border-radius: 25px;
+    padding: 5px;
+}
+
+.inlineptag{
+    display:inline-block;
+}
+
+h1 {
+    font-style: italic;
+    color: red;
+    text-shadow: -2px 0 black;
+}
+
+#spanTest {
+    font-size: 12px;
+    position: relative;
+    top: -23px;
+    right: 20px;
+    
+}
+
+#cartBtn {
+    font-size: 30px;
+    color: grey;
+}
+
+.Removebtn{
+    color: red;
+    font-weight:bold;
+}
+
+.newProdukt {
+    position: absolute;
+    bottom: 520px;
+    left: 740px;
+}
+
+.newProdukt form{
+    border:none;
+}
+
+.Updateform{
+    height: 250px;
+
+
+
+}
+
+.smallUpdateform{
+    height: 125px;
+}
+
+.field-validation-error {
+    color: red;
+}

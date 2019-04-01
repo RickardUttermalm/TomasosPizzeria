@@ -1,0 +1,11 @@
+﻿
+@using Microsoft.AspNetCore.Http
+
+
+<a id="cartBtn" asp-controller="Cart" asp-action="Checkout" class="nav-item">
+    <i class="fas fa-shopping-cart fa-x3">
+        <span id="spanTest" class="badge badge-dark">@Context.Session.GetString("cartCount")</span>
+    </i>
+</a>
+
+

@@ -1,0 +1,74 @@
+﻿
+@{
+    ViewData["Title"] = "Register";
+}
+
+@model TomasosPizzeriaTest.ViewModels.RegistrationViewModel
+
+<head>
+    <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/lib/bootstrap/dist/css/bootstrap-grid.css" rel="stylesheet" />
+    <link href="~/lib/bootstrap/dist/css/bootstrap-reboot.css" rel="stylesheet" />
+    <link href="~/css/site.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="container-fluid mainbackground" >
+        <div class="row">
+            <div class="col-xs-0 col-md-2 col-lg-4">
+
+            </div>
+            <div class="col-xs-12 col-md-8 col-lg-4">
+                <div class="text-center">
+                    <form asp-controller="Account" asp-action="Register">
+                        <br />
+                        <label asp-for="AnvandarNamn"></label><br /><span asp-validation-for="AnvandarNamn"></span><br />
+                        <input type="text" asp-for="AnvandarNamn"><br />
+
+                        <label asp-for="Namn"></label><br /><span asp-validation-for="Namn"></span><br />
+                        <input type="text" asp-for="Namn"><br />
+
+                        <label asp-for="Email"></label><br /><span asp-validation-for="Email"></span><br />
+                        <input type="text" asp-for="Email"><br />
+
+                        <label asp-for="Gatuadress"></label><br /><span asp-validation-for="Gatuadress"></span><br />
+                        <input type="text" asp-for="Gatuadress"><br />
+
+                        <label asp-for="Postnr"></label><br /><span asp-validation-for="Postnr"></span><br />
+                        <input type="text" asp-for="Postnr"><br />
+
+                        <label asp-for="Postort"></label><br /><span asp-validation-for="Postort"></span><br />
+                        <input type="text" asp-for="Postort"><br />
+
+                        <label asp-for="Losenord"></label><br /><span asp-validation-for="Losenord"></span><br />
+                        <input type="text" asp-for="Losenord"><br />
+
+                        <input type="radio" asp-for="RoleName" value="Premium" />
+                        Premium
+                        <input type="radio" asp-for="RoleName" value="Standard" />
+                        Standard
+                        <br />
+                        <br />
+
+                        <input type="submit" value="Spara" class="btn btn-primary" />
+                        <br />
+                    </form>
+                </div>
+            </div>
+            <div class="col-xs-0 col-md-2 col-lg-4">
+
+            </div>
+
+        </div>
+    </div>
+</body>
+
+
+
+
+
+
+
+
+
+

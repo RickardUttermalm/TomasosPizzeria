@@ -1,0 +1,53 @@
+﻿
+@using Microsoft.AspNetCore.Http
+@model TomasosPizzeriaTest.ViewModels.AddItemViewModel
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-0 col-md-4"></div>
+        <div class="col-sm-12 col-md-4 text-center">
+            <form asp-controller="Admin" asp-action="AddMenuitem" method="post">
+
+                <select asp-for="MatrattTyp" asp-items="@Model.Matratttyper"></select>
+                <input asp-for="MatrattNamn" type="text" />
+                <br />
+                <br />
+                <div class="row">
+                    <div class="col-6">
+                        <select asp-for="ValdaIdn" asp-items="@Model.Ingredienslista" multiple="Multiple" id="ingredientBox"></select>
+                    </div>
+                    <div class="col-6">
+                        
+                    </div>
+                </div>
+                <br />
+                <br />
+                <input type="text" name="beskrivning" asp-for="Beskrivning" maxlength="200" placeholder="Beskrivning" />
+                <br />
+                <br />
+                <input type="text" asp-for="Pris" placeholder="Pris" value=""/>
+                <br />
+                <br />
+                <button type="submit" class="btn btn-primary">Spara</button>
+
+            </form>
+        </div>
+        <div class="col-sm-0 col-md-4"></div>
+
+    </div>
+    <div class="text-center newProdukt">
+        <br />
+        <br />
+        <div class="text-center">
+            <partial name="_AddIngredientPartial" model="@Model.NyProdukt" />
+
+
+        </div>
+    </div>
+</div>
+
+
+@*<div id="selectedIngredients">
+    <ul id="IngredientUl"></ul>
+
+</div>*@

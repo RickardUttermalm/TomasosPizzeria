@@ -1,0 +1,48 @@
+﻿
+@model TomasosPizzeriaTest.ViewModels.UpdateUserViewModel
+
+<div class="container-fluid mainbackground">
+    <div class="row">
+        <div class="col-xs-0 col-md-2 col-lg-4">
+
+        </div>
+        <div class="col-xs-12 col-md-8 col-lg-4">
+            <div class="text-center">
+                <form asp-controller="Account" asp-action="UpdateUserInfo" method="post">
+                    <h3>Dina uppgifter</h3>
+                    <br />
+                    
+                    <label asp-for="Namn"></label><br /><span asp-validation-for="Namn"></span><br />
+                    <input type="text" asp-for="Namn" value="@Model.CurrentUser.Namn"><br />
+
+                    <label asp-for="Email"></label><br /><span asp-validation-for="Email"></span><br />
+                    <input type="text" asp-for="Email" value="@Model.CurrentUser.Email"><br />
+
+                    <label asp-for="Gatuadress"></label><br /><span asp-validation-for="Gatuadress"></span><br />
+                    <input type="text" asp-for="Gatuadress" value="@Model.CurrentUser.Gatuadress"><br />
+
+                    <label asp-for="Postnr"></label><br /><span asp-validation-for="Postnr"></span><br />
+                    <input type="text" asp-for="Postnr" value="@Model.CurrentUser.Postnr"><br />
+
+                    <label asp-for="Postort"></label><br /><span asp-validation-for="Postort"></span><br />
+                    <input type="text" asp-for="Postort" value="@Model.CurrentUser.Postort"><br />
+
+                    <label asp-for="Losenord"></label><br /><span asp-validation-for="Losenord"></span><br />
+                    <input type="text" asp-for="Losenord" value="@Model.CurrentUser.Losenord"><br />
+
+                    <input type="hidden" asp-for="KundId" value="@Model.CurrentUser.KundId"/>
+                    <br />
+                    <br />
+
+                    <input type="submit" value="Spara Ändringar" class="btn btn-primary" />
+                    <br />
+                </form>
+            </div>
+        </div>
+        <div class="col-xs-0 col-md-2 col-lg-4">
+
+        </div>
+
+    </div>
+</div>
+

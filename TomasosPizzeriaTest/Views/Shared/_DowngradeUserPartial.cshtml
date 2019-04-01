@@ -1,0 +1,13 @@
+﻿
+@model TomasosPizzeriaTest.ViewModels.ManageRolesViewModel
+
+<form asp-controller="Admin" asp-action="DowngradeUser" method="post">
+    <label>Premium användare: </label>
+    <br />
+    <span asp-validation-for="SelectedUserID"></span>
+    <br />
+    <Select asp-for="SelectedUserID" asp-items="@Model.PremiumUsers"></Select>
+    <br />
+    <br />
+    <button type="submit" class="btn btn-primary">Nedgradera vald</button>
+</form>

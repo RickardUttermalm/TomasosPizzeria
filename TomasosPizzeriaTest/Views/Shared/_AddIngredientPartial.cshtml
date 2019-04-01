@@ -1,0 +1,14 @@
+﻿@model TomasosPizzeriaTest.Models.Produkt
+
+
+<div id="newingred">
+    <form asp-controller="Admin" asp-action="CreateNewProduct" method="post">
+       <input asp-for="ProduktNamn" placeholder="Ny Ingrediens" />
+       <br />
+        <span asp-validation-for="ProduktNamn"></span>
+        <br />
+        <button type="submit" class="btn btn-primary">Lägg till</button>
+
+</form>
+</div>
+

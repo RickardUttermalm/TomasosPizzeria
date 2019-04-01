@@ -1,0 +1,42 @@
+﻿
+@model TomasosPizzeriaTest.ViewModels.UpdateViewModel
+
+
+<div class="Container-fluid">
+    <div class="row">
+        <div class="col-sm-0 col-lg-3"></div>
+        <div class="col-sm-12 col-lg-6 text-center">
+            <div class="row">
+                <div class="col-sm-12 col-md-6 text-center">
+                    <form asp-action="Update" asp-controller="Admin" method="post" class="Updateform">
+                        <br />
+                        <input asp-for="CurrentRatt.MatrattNamn" value="@Model.CurrentRatt.MatrattNamn" />
+                        <br /><br />
+                        <input asp-for="CurrentRatt.Pris" value="@Model.CurrentRatt.Pris" />
+                        <br /><br />
+                        <input asp-for="CurrentRatt.Beskrivning" value="@Model.CurrentRatt.Beskrivning" />
+                        <br /><br />
+                        <input type="hidden" asp-for="CurrentRatt.MatrattTyp" value="@Model.CurrentRatt.MatrattTyp" />
+                        <input type="hidden" asp-for="CurrentRatt.MatrattId" value="@Model.CurrentRatt.MatrattId" />
+                        <button class="btn btn-primary" type="submit">Spara</button>
+                        <br />
+                    </form>
+                </div>
+                <div class="col-sm-12 col-md-6 text-center">
+                    <div class="row">
+                        <div class="col-12">
+                            <partial name="_RemoveIngredient" model="@Model" />
+                        </div>
+                        <div class="col-12">
+                            <partial name="_AddIngredientToMenuPartial" model="@Model" />
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="col-sm-0 col-lg-3"></div>
+
+    </div>
+</div>
+

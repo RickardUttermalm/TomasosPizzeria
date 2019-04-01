@@ -1,0 +1,40 @@
+﻿
+@{
+    ViewData["Title"] = "Login";
+}
+
+@model TomasosPizzeriaTest.Models.Kund
+<head>
+    <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/lib/bootstrap/dist/css/bootstrap-grid.css" rel="stylesheet" />
+    <link href="~/lib/bootstrap/dist/css/bootstrap-reboot.css" rel="stylesheet" />
+    <link href="~/css/site.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="container-fluid mainbackground" id="loginbackground">
+        <div class="row">
+            <div class="col-xs-0 col-md-2 col-lg-4">
+
+            </div>
+            <div class="col-xs-12 col-md-8 col-lg-4">
+                <div class="text-center">
+                    <form asp-controller="Account" asp-action="Login" method="post">
+                        <br /> <br />
+                        <input asp-for="AnvandarNamn" placeholder="AnvändarNamn" />
+                        <br /> <br />
+                        <input type="password" asp-for="Losenord" placeholder="Lösenord" />
+                        <br />
+                        <br />
+                        <button type="submit" class="btn btn-primary">Logga in</button>
+                        <br />
+                    </form>
+                </div>
+            </div>
+            <div class="col-xs-0 col-md-2 col-lg-4">
+
+            </div>
+
+        </div>
+    </div>
+</body>

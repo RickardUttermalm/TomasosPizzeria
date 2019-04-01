@@ -1,0 +1,72 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using TomasosPizzeriaTest.IdentityData
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+@{
+    ViewData["Title"] = "Meny";
+}
+
+@model TomasosPizzeriaTest.ViewModels.MenuViewModel
+
+<div class="container-fluid mainbackground">
+    <div class="row">
+        <div class="col-sm-0 col-md-2 col-lg-4">
+
+        </div>
+        <div class="col-sm-12 col-md-8 col-lg-4">
+
+            <div class="row text-center">
+                @for (int i = 0; i < Model.Categories.Count; i++)
+                {
+                    <div class="col-12 text-center">
+
+                        <h1>@Model.Categories[i]</h1>
+                        <hr />
+                    </div>
+                    @for (int j = 0; j < Model.AllDishes[i].Count; j++)
+                    {
+                        <div class="col-2"></div>
+                        <div class="col-8 text-center menuitem">
+                            <h3>@Model.AllDishes[i][j].Name</h3>
+                            <hr />
+                            <p>@Model.AllDishes[i][j].Ingredients</p>
+                            <hr />
+                            @if (SignInManager.IsSignedIn(User))
+                            {
+                                <a asp-controller="Cart" asp-action="AddToCart" asp-route-id="@Model.AllDishes[i][j].ID"
+                                   data-ajax="true"
+                                   data-ajax-method="GET"
+                                   data-ajax-mode="replace"
+                                   data-ajax-update="#cartBtn">
+                                    <button class="btn btn-primary AdToCartBtn">Köp</button>
+                                </a>
+                            }
+
+                            @if (User.IsInRole("Admin"))
+                            {
+                                <a asp-controller="Admin" asp-action="Update" asp-route-id="@Model.AllDishes[i][j].ID">
+                                    <button class="btn btn-primary">Uppdatera</button>
+                                </a>
+
+                                <a asp-controller="Admin" asp-action="RemoveMenuItem" asp-route-id="@Model.AllDishes[i][j].ID">
+                                    <button class="btn btn-primary">Ta bort</button>
+                                </a>
+                            }
+
+
+                        </div>
+                        <div class="col-2"></div>
+
+                    }
+                }
+            </div>
+        </div>
+        <div class="col-sm-0 col-md-2 col-lg-4">
+
+        </div>
+
+    </div>
+
+
+</div>
+

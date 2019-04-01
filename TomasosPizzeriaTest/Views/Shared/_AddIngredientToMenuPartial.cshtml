@@ -1,0 +1,12 @@
+﻿
+@model TomasosPizzeriaTest.ViewModels.UpdateViewModel
+
+<form asp-action="AddIngredientToMenu" asp-controller="Admin" method="post" class="smallUpdateform">
+    <br />
+    <select asp-for="ToBeAddedProdId" asp-items="@Model.AllProdlist"></select>
+    <br /><br />
+    <input type="hidden" asp-for="CurrentRatt.MatrattId" value="@Model.CurrentRatt.MatrattId" />
+    <button class="btn btn-primary" type="submit">Lägg till</button>
+    <br />
+</form>
+

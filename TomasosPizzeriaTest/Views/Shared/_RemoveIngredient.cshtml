@@ -1,0 +1,11 @@
+﻿
+@model TomasosPizzeriaTest.ViewModels.UpdateViewModel
+
+<form asp-action="RemoveIngredient" asp-controller="Admin" method="post" class="smallUpdateform">
+    <br />
+    <select asp-for="ToDeleteProdId" asp-items="@Model.Prodlist"></select>
+    <br /><br />
+    <input type="hidden" asp-for="CurrentRatt.MatrattId" value="@Model.CurrentRatt.MatrattId" />
+    <button class="btn btn-primary" type="submit">Ta bort</button>
+    <br />
+</form>

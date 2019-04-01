@@ -1,0 +1,36 @@
+﻿
+@using Microsoft.AspNetCore.Identity
+@using TomasosPizzeriaTest.IdentityData
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+
+
+@if (User.IsInRole("Admin"))
+{
+    <li class="dropdown nav-item">
+        <a class="dropdown-toggle nav-link" data-toggle="dropdown" href="#">
+            Admin
+            <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu">
+            <li class="nav-item"><a asp-controller="Admin" asp-action="AddMenuitem" class="nav-link">Lägg till Maträtt</a></li>
+            <li class="nav-item"><a asp-controller="Admin" asp-action="ManageOrders" class="nav-link">Hantera Ordrar</a></li>
+            <li class="nav-item"><a asp-controller="Admin" asp-action="ManageRoles" class="nav-link">Hantera Kunder</a></li>
+        </ul>
+    </li>
+}
+
+@if (SignInManager.IsSignedIn(User))
+{
+    <partial name="_CartPartial" />
+    <li class="nav-item"><a class="nav-link" asp-controller="Account" asp-action="LogOut">Logga ut</a></li>
+    <li class="nav-item"><a class="nav-link" asp-controller="Account" asp-action="UpdateUserInfo">Updatera profil</a></li>
+
+}
+else
+{
+    <li class="nav-item"><a class="nav-link" asp-controller="Account" asp-action="Login">Logga in</a></li>
+    <li class="nav-item"><a class="nav-link" asp-controller="Account" asp-action="Register">Registrera</a></li>
+}
+
+
